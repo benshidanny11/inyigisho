@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'RobotoCondensed';
+    src: url('./../fonts/RobotoCondensed-Regular.ttf');
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font:inherit;
+    font-family: 'RobotoCondensed';
+    vertical-align:baseline
+} 
+.header{
+    height: 90px;
+    border-bottom: 1px solid rgb(209, 209, 209);
+    padding-top: 20px;
+
+}
+.linkhome{
+    color: rgb(110, 110, 110);
+    font-size: xx-large;
+
+}
+.linkhome:hover{
+    text-decoration: none;
+}
+.mt-10{
+    margin-top: 5rem !important;
+}
+
+.lbl-form{
+  color: rgb(122, 122, 122) !important;
+  font-size: 13px;
+}
+
+/* Login */
+
+.header {
+    width: 100%;
+  
+    padding: 1rem;
+    box-shadow: 2px 1px 2px #dfdfdf;
+  }
+  .header span {
+    font-size: x-large;
+  }
+  .martop {
+    margin-top: 2rem !important;
+  }
+  .lbl-form::before {
+    content: "* ";
+    color: rgb(243, 157, 147);
+  }
+  input [type="text"]:focus {
+    outline: none !important;
+  }
+  .cardmod {
+    padding: 2rem !important;
+  }
+  .align-middle{
+      align-items: center;
+      justify-content: center;
+      display: flex;
+  }
+  
+  
+  
+  h2 {
+    all: revert;
+  }
+  
+  .form-control {
+    box-shadow: none;
+    border-color: #ddd;
+  }
+  .form-control:focus {
+    border-color: #3195cf;
+  }
+  .login-form {
+    width: 350px;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+  .login-form form {
+    color: #434343;
+    border-radius: 1px;
+    margin-bottom: 15px;
+    background: #fff;
+    border: 1px solid #f3f3f3;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+  }
+  .login-form h4 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .login-form .avatar {
+    color: #fff;
+    margin: 0 auto 30px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    z-index: 9;
+    background: #3195cf;
+    padding: 15px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  .login-form .avatar i {
+    font-size: 62px;
+  }
+  .login-form .form-group {
+    margin-bottom: 20px;
+  }
+  .login-form .form-control,
+  .login-form .btn {
+    min-height: 40px;
+    border-radius: 2px;
+    transition: all 0.5s;
+  }
+  .login-form .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  .login-form .btn,
+  .login-form .btn:active {
+    background: #3195cf !important;
+    border: none;
+    line-height: normal;
+  }
+  .login-form .btn:hover,
+  .login-form .btn:focus {
+    background: #3195cf !important;
+  }
+  .login-form .checkbox-inline {
+    float: left;
+  }
+  .login-form input[type="checkbox"] {
+    position: relative;
+    top: 2px;
+  }
+  .login-form .forgot-link {
+    float: right;
+  }
+  .login-form .small {
+    font-size: 13px;
+  }
+  .login-form a {
+    color: #3195cf;
+  }
+  .linkitem {
+      margin-left: 2rem !important;
+      opacity: .6;
+    }
+  .title{
+    color: rgb(66, 65, 65) !important;
+    font-size: 25px; 
+  }
+  
