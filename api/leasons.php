@@ -2,16 +2,22 @@
 include ("../displayerrors.php");
 include("dbconnect.php");
 
-$sql = 'SELECT * FROM `leasons_tbl`';
+$now = new \DateTime('now');
+$month = $now->format('m');
+$year = $now->format('Y');
+
+
+$sql = 'SELECT * FROM `leasons_tbl` WHERE month='.$month.' AND year='.$year.' ORDER BY id DESC';
 //$result = mysqli_query($conn, $query);
 //$row = mysqli_fetch_array($result);
 $result = $conn->query($sql);
-$json=[];
 $rows = array();
 if ($result->num_rows > 0) {
 while ($row = $result->fetch_assoc()) {
-
-   $json = $row;
+   $commentcountsql="SELECT Count(*) as ccount from comments where leason_id=".$row['id'];
+   $result_count = $conn->query($commentcountsql);
+   $row_count = $result_count->fetch_assoc();
+   $row['comment_count']=$row_count['ccount'];
    $rows['lesons'][] = $row;
 }
 http_response_code(200);

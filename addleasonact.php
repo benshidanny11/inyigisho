@@ -8,6 +8,9 @@ if (isset($_POST['submit'])) {
     $postername = $_POST['postersname'];
 
     $date = date("Y-m-d");
+    $now = new \DateTime('now');
+    $month = $now->format('m');
+    $year = $now->format('Y');
 
 
     $file_leason = rand(1000, 100000) . "-" . $_FILES['leason']['name'];
@@ -25,8 +28,8 @@ if (isset($_POST['submit'])) {
         if (move_uploaded_file($file_feat_loc, $folder_feature . $file_featureimage)) {
             $leasonurl = $folder_leason . $file_leason;
             $featureimageurl = $folder_feature . $file_featureimage;
-            $sql = "INSERT INTO leasons_tbl(title,posted_by,leason_description,audio_url,done_on,featureimage_url) 
-    VALUES('$title','$postername','$description','$leasonurl','$date','$featureimageurl')";
+            $sql = "INSERT INTO leasons_tbl(title,posted_by,leason_description,audio_url,done_on,year,month,featureimage_url) 
+    VALUES('$title','$postername','$description','$leasonurl','$date','$year','$month','$featureimageurl')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "<script>alert('Leason was registered suceesfully!');

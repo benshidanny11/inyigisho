@@ -3,7 +3,8 @@ include ("../displayerrors.php");
 include("dbconnect.php");
 
 
-$sql = 'SELECT * FROM `comments` where leason_id='.$_GET['lesid'].' ORDER BY id DESC';
+
+$sql = 'SELECT year FROM `leasons_tbl` GROUP BY year DESC';
 //$result = mysqli_query($conn, $query);
 //$row = mysqli_fetch_array($result);
 $result = $conn->query($sql);
@@ -13,8 +14,9 @@ if ($result->num_rows > 0) {
 while ($row = $result->fetch_assoc()) {
 
    $json = $row;
-   $rows['comments'][] = $row;
+   $rows[] = $row;
 }
+http_response_code(200);
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 echo json_encode($rows);
@@ -26,6 +28,7 @@ echo json_encode($rows);
    );
    echo json_encode($messageRes);
 }
+
 $conn -> close();
 
 ?>
