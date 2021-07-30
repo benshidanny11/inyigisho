@@ -43,7 +43,7 @@ if (!isset($_SESSION['uname'])) {
           <div class="card-header">
             <div class="row">
               <div class="col-10">
-               <h3>Add audio leason</h3>
+               <h3>Add video lesson</h3>
               </div>
               <div class="col-2">
                 <a href="index.php" class="btn btn-primary">
@@ -54,23 +54,20 @@ if (!isset($_SESSION['uname'])) {
           </div>
           <div class="card-body">
           <div class="alert alert-light martop" role="alert">
-              <form action="addleasonact.php" method="post" enctype="multipart/form-data">
+              <form action="addvideoact.php" method="post" enctype="multipart/form-data">
 
-                <div class="form-group mt-2">
-                  <label for="advicetitle" class="lbl-form">Feature image</label>
-                  <input type="file" class="form-control txt mt-3" placeholder="Choose file" name="featureimage" required />
-                </div>
+               
                 <div class="form-group mt-3">
-                  <label for="advicetitle" class="lbl-form">Leason </label>
-                  <input type="file" class="form-control txt mt-2" placeholder="Choose file" name="leason" />
+                  <label for="advicetitle" class="lbl-form">Lesson video link</label>
+                  <input type="text" class="form-control txt mt-2" placeholder="Paste video link here" name="leason" />
                 </div>
                 <div class="form-group mt-2">
-                  <label for="advicetitle" class="lbl-form">Leason title</label>
+                  <label for="advicetitle" class="lbl-form">Lesson title</label>
                   <input type="text" class="form-control txt mt-2" placeholder="Enter title of leason" name="title" required />
                 </div>
 
                 <div class="form-group mt-2">
-                  <label for="advicetitle" class="lbl-form">Leason description</label>
+                  <label for="advicetitle" class="lbl-form">Lesson description</label>
                   <textarea class="form-control txt mt-2" placeholder="Enter leason description" name="description" rows="5" required ></textarea>
                 </div>
 
@@ -95,7 +92,7 @@ if (!isset($_SESSION['uname'])) {
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://code.jquery.com/git/jquery-git.min.js"></script>
 
-
+ 
 </body>
 
 </html>

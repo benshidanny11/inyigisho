@@ -7,8 +7,9 @@ if (!isset($_SESSION['uname'])) {
 
 include("./api/dbconnect.php");
 
-$query = "Select * from leasons_tbl";
-$leasons_result = $conn->query($query);
+$query_videos = "Select * from video_lessons_tbl";
+
+$leasons_result_videos = $conn->query($query_videos);
 
 
 ?>
@@ -43,26 +44,24 @@ $leasons_result = $conn->query($query);
           <div class="card-header">
             <div class="row">
               <div class="col-10">
-               <h5>Audio lessons</h5>
+               <h5>Video lessons</h5>
               </div>
               <div class="col-2">
                <div class="d-flex">
 
-               <a href="addleason.php" class="btn btn-primary">
-                  Add audio lesson
+               
+                <a href="addvideolesson.php" class="btn btn-primary" style="margin-left: 1.5rem;">
+                  Add video lesson
                 </a>
-
                </div>
               </div>
             </div>
           </div>
           <div class="card-body">
 
-
-            <table id="example" class="table table-striped" style="width: 100%">
+          <table id="example" class="table table-striped" style="width: 100%">
               <thead>
                 <tr>
-                  <th>Feature image</th>
                   <th>Posted by</th>
                   <th>Leason description</th>
                   <th>Lesson link</th>
@@ -72,18 +71,17 @@ $leasons_result = $conn->query($query);
               </thead>
               <tbody>
                 <?php
-                if ($leasons_result->num_rows > 0) {
-                  while ($row = $leasons_result->fetch_assoc()) {
+                if ($leasons_result_videos->num_rows > 0) {
+                  while ($row = $leasons_result_videos->fetch_assoc()) {
 
                     echo '<tr>
-                            <td><img src="' . $row['featureimage_url'] . '" wedth="50" height="50"></td>
                             <td>' . $row['posted_by'] . '</td>
-                            <td>' . $row['leason_description'] . '</td>
-                            <td>' . $row['audio_url'] . '</td>
+                            <td>' . $row['description'] . '</td>
+                            <td>' . $row['video_url'] . '</td>
                             <td>' . $row['done_on'] . '</td>
                             <td>
-                            <div class="d-flex"><a href="'. $row['audio_url'] .'" class="btn btn-primary" target="blank">Listen</a>
-                            <a href="delete.php?id=' . $row['id'] . '" class="btn btn-danger" style="margin-left:1rem;">Delete</a>
+                            <div class="d-flex"><a href="'. $row['video_url'] .'" class="btn btn-primary" target="blank">Watch</a>
+                            <a href="deletevid.php?id=' . $row['id'] . '" class="btn btn-danger" style="margin-left:1rem;">Delete</a>
                              </div>
                             </td>
                            </tr>';
@@ -93,6 +91,7 @@ $leasons_result = $conn->query($query);
                 ?>
               </tbody>
             </table>
+
 
           </div>
         </div>
@@ -106,8 +105,7 @@ $leasons_result = $conn->query($query);
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
   <script>
     $(document).ready(function() {
-     
-      $("#example").DataTable();
+      $("example").DataTable();
    
     });
   </script>

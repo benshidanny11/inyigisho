@@ -12,11 +12,11 @@ if (isset($_POST['submit'])) {
     $month = $now->format('m');
     $year = $now->format('Y');
 
-
-    $file_leason = rand(1000, 100000) . "-" . $_FILES['leason']['name'];
+    $timestamp= $now->getTimestamp(); 
+    $file_leason =  rand(100, 1000000) . $timestamp.".". pathinfo($_FILES['leason']['name'],PATHINFO_EXTENSION);
     $file_leas_loc = $_FILES['leason']['tmp_name'];
 
-    $file_featureimage = rand(1000, 100000) . "-" . $_FILES['featureimage']['name'];
+    $file_featureimage =rand(100, 1000000) . $timestamp.".". pathinfo($_FILES['featureimage']['name'],PATHINFO_EXTENSION);
     $file_feat_loc = $_FILES['featureimage']['tmp_name'];
 
 

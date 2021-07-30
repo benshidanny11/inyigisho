@@ -3,22 +3,22 @@ include ("../displayerrors.php");
 include("dbconnect.php");
 
 $now = new \DateTime('now');
-$sql = 'SELECT * FROM `leasons_tbl` WHERE month='.$_GET['month'].' AND year='.$_GET['year'].' ORDER BY id DESC';
+$month = $now->format('m');
+$year = $now->format('Y');
+
+
+$sql = 'SELECT * FROM `video_lessons_tbl` WHERE month='.$month.' AND year='.$year.' ORDER BY id DESC';
 //$result = mysqli_query($conn, $query);
 //$row = mysqli_fetch_array($result);
 $result = $conn->query($sql);
-
 $rows = array();
 if ($result->num_rows > 0) {
 while ($row = $result->fetch_assoc()) {
-    
    $commentcountsql="SELECT Count(*) as ccount from comments where leason_id=".$row['id'];
    $result_count = $conn->query($commentcountsql);
    $row_count = $result_count->fetch_assoc();
    $row['comment_count']=$row_count['ccount'];
-
-
-   $rows['lesons'][] = $row;
+   $rows['videolesons'][] = $row;
 }
 http_response_code(200);
 header("Access-Control-Allow-Origin: *");
