@@ -81,6 +81,7 @@ $leasons_result_videos = $conn->query($query_videos);
                             <td>' . $row['done_on'] . '</td>
                             <td>
                             <div class="d-flex"><a href="'. $row['video_url'] .'" class="btn btn-primary" target="blank">Watch</a>
+                            <a href="comments.php?id=' . $row['id'] . '" class="btn btn-primary" style="margin-left:1rem;">Comments</a>
                             <a href="deletevid.php?id=' . $row['id'] . '" class="btn btn-danger" style="margin-left:1rem;">Delete</a>
                              </div>
                             </td>

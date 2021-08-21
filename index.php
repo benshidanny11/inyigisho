@@ -83,6 +83,7 @@ $leasons_result = $conn->query($query);
                             <td>' . $row['done_on'] . '</td>
                             <td>
                             <div class="d-flex"><a href="'. $row['audio_url'] .'" class="btn btn-primary" target="blank">Listen</a>
+                            <a href="comments.php?id=' . $row['id'] . '" class="btn btn-primary" style="margin-left:1rem;">Comments</a>
                             <a href="delete.php?id=' . $row['id'] . '" class="btn btn-danger" style="margin-left:1rem;">Delete</a>
                              </div>
                             </td>

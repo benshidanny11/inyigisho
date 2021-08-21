@@ -3,7 +3,7 @@ include ("../displayerrors.php");
 include("dbconnect.php");
 
 
-$sql = 'SELECT * FROM `comments` where leason_id='.$_GET['lesid'].' ORDER BY id DESC';
+$sql = 'SELECT * FROM `comments` where leason_id='.$_GET['lesid'].' and status=1 ORDER BY id DESC';
 //$result = mysqli_query($conn, $query);
 //$row = mysqli_fetch_array($result);
 $result = $conn->query($sql);
