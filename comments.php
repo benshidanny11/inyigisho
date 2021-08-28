@@ -60,6 +60,7 @@ $leasons_result = $conn->query($query);
                 <tr>
                   <th>Posted by</th>
                   <th>Comment</th>
+                  <th>Comment type</th>
                   <th>Status</th>
                   <th>Done on</th>
                   <th>Actions</th>
@@ -74,6 +75,7 @@ $leasons_result = $conn->query($query);
                     echo '<tr>
                     <td>' . $row['userfullname'] . '</td>
                     <td>' . $row['comment'] . '</td>
+                    <td>' . $row['lesson_type'] . ' lesson</td>
                     <td>Pending</td>
                     <td>' . $row['doneon'] . '</td>
                     <td>
@@ -86,6 +88,7 @@ $leasons_result = $conn->query($query);
                     echo '<tr>
                     <td>' . $row['userfullname'] . '</td>
                     <td>' . $row['comment'] . '</td>
+                    <td>' . $row['lesson_type'] . ' lesson</td>
                     <td>Approved</td>
                     <td>' . $row['doneon'] . '</td>
                     <td>
