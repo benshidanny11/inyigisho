@@ -2,15 +2,17 @@
 include ("../displayerrors.php");
 include("dbconnect.php");
 
+$sql = "SELECT * FROM `comments` WHERE leason_id=".$_GET['lesid']." AND lesson_type='".$_GET['lesstype']."' AND status=1 ORDER BY id DESC";
 
-$sql = "SELECT * FROM `comments` WHERE leason_id='1' AND lesson_type='video' AND status=1 ORDER BY id DESC";
-//$result = mysqli_query($conn, $query);
-//$row = mysqli_fetch_array($result);
+
 $result = $conn->query($sql);
 $json=[];
 $rows = array();
+
 if ($result->num_rows > 0) {
+
 while ($row = $result->fetch_assoc()) {
+
 
    $json = $row;
    $rows['comments'][] = $row;
